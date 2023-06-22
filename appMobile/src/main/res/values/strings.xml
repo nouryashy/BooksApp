@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">ProjectX</string>
+    <string name="app_name">MovieApp</string>
     <string name="bookmarked_recipes">Bookmarked</string>
 
     <!--notification_channel_id-->
     <string name="default_notification_channel_id" translatable="false">projectx-channel</string>
     <!--Splash-->
-    <string name="title_screen_splash">ProjectX</string>
+    <string name="title_screen_splash">MovieApp</string>
     <string name="action_sign_in">Log in</string>
     <string name="action_skip">Skip</string>
     <string name="welcome">Welcome !</string>

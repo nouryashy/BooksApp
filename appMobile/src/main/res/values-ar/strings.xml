@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">MovieApp</string>
+    <string name="app_name">BooksApp</string>
     <string name="bookmarked_recipes">Bookmarked</string>
 
     <!--Splash-->
-    <string name="title_screen_splash">MovieApp</string>
+    <string name="title_screen_splash">BooksApp</string>
     <string name="action_sign_in">تسجيل الدخول</string>
     <string name="action_skip">تخطي</string>
     <string name="welcome">"مرحبا !"</string>

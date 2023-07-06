@@ -1,5 +1,5 @@
 include ':Domain', ':Data', ':appMobile'
-rootProject.name='MovieApp'
+rootProject.name='BooksApp'
 include ':extensions'
 include ':androidextensions'
 include ':widget'

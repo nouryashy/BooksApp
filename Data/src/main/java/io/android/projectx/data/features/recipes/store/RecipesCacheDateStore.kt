@@ -64,6 +64,7 @@ open class RecipesCacheDateStore @Inject constructor(
     }
 
     override fun areRecipesCached(): Single<Boolean> {
+
         return appDatabase.cachedRecipesDao().getRecipes().isEmpty.map { !it }
     }
 

@@ -82,6 +82,7 @@ class RestaurantsFragment : BaseFragment(R.layout.restaurants_fragment) {
             }
             Status.ERROR -> {
             }
+            else -> {}
         }
     }
 

@@ -15,5 +15,6 @@
     <color name="colorEclipse">#463e3e</color>
     <color name="colorGrayishBlue">#adb9ce</color>
     <color name="colorWhiteSmoke">#f8f8f8</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>

@@ -17,7 +17,7 @@ import java.net.SocketTimeoutException
 /**
  * Wraps "regular" Remote errors in custom RemoteException class
  */
-class ErrorHandlingCallAdapterFactory private constructor() : CallAdapter.Factory() {
+class mErrorHandlingCallAdapterFactory private constructor() : CallAdapter.Factory() {
 
     private val original: RxJava2CallAdapterFactory = RxJava2CallAdapterFactory.create()
 

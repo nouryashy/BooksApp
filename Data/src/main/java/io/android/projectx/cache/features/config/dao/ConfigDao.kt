@@ -18,6 +18,7 @@ abstract class ConfigDao {
     @Query(QUERY_CONFIG_ITEM)
     abstract fun getConfig(key: String): Single<Config>
 
+
     @Query(QUERY_ALL_CONFIG)
     @JvmSuppressWildcards
     abstract fun getAllConfig(): Flowable<List<Config>>

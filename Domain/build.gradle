@@ -13,6 +13,11 @@ dependencies {
     testImplementation domainTestDependencies.junit
     testImplementation domainTestDependencies.mockito
     testImplementation domainTestDependencies.assertj
+
+
+    // coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
 }
 
 sourceCompatibility = "8"

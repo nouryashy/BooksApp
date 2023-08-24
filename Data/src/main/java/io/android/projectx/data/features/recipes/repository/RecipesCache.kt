@@ -5,7 +5,8 @@ import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
 
-interface RecipesCache : RecipesDataStore {
+interface
+RecipesCache : RecipesDataStore {
 
     fun clearRecipes(): Completable
 

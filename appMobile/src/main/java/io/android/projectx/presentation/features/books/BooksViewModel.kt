@@ -2,6 +2,8 @@ package io.android.projectx.presentation.features.books
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
 import io.android.projectx.domain.features.books.interactor.GetBooks
 import io.android.projectx.presentation.base.mapper.BookViewMapper
 import io.android.projectx.presentation.base.model.ResultView
@@ -12,7 +14,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
+@HiltViewModel
 class BooksViewModel @Inject constructor(
     private val getBooks: GetBooks?,
     private val mapper: BookViewMapper

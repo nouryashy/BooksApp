@@ -9,6 +9,7 @@ import android.widget.Filter
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import dagger.hilt.android.AndroidEntryPoint
 import io.android.projectx.androidextensions.inflate
 import io.android.projectx.androidextensions.initVerticalRecycler
 import io.android.projectx.presentation.R
@@ -23,7 +24,7 @@ import kotlinx.android.synthetic.main.restaurants_fragment.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class BooksFragment : BaseFragment(R.layout.bookmarked_fragment) {
 
     private lateinit var adapter: Adapter<ResultView>

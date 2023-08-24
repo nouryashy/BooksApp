@@ -1,9 +1,10 @@
-package io.android.projectx.domain.features.books.model
-import io.android.projectx.domain.features.books.model.Author
-import io.android.projectx.domain.features.books.model.Formats
-import io.android.projectx.domain.features.books.model.Translator
+package io.android.projectx.remote.features.books.model.response
 
-data class Result(
+import io.android.projectx.data.features.books.model.Author
+import io.android.projectx.data.features.books.model.Formats
+import io.android.projectx.data.features.books.model.Translator
+
+data class Book(
     val id: Int,
     val authors: List<Author>,
     val bookshelves: List<String>,

@@ -4,5 +4,5 @@ data class BookResponce(
     val count: Int,
     val next: String,
     val previous: Any,
-    val results: List<CachedResultBook>
+    val results: List<CachedBook>
 )

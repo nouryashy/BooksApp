@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import io.android.projectx.cache.features.books.dao.CachedBooksDao
-import io.android.projectx.cache.features.books.model.CachedResultBook
+import io.android.projectx.cache.features.books.model.CachedBook
 import io.android.projectx.cache.features.config.dao.ConfigDao
 import io.android.projectx.cache.features.config.model.Config
 import io.android.projectx.cache.features.recipes.dao.CachedRecipesDao
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 @Database(
     entities = [Config::class,
         CachedRecipe::class,
-        CachedRestaurant::class, CachedResultBook::class],
+        CachedRestaurant::class, CachedBook::class],
 
     version = 1
 )

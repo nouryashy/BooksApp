@@ -1,9 +1,18 @@
-package io.android.projectx.presentation.base.model
+package io.android.projectx.cache.features.books.model
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import io.android.projectx.cache.features.books.db.BooksConstants
+import io.android.projectx.cache.features.recipes.db.RecipeConstants
 import io.android.projectx.domain.features.books.model.Author
 import io.android.projectx.domain.features.books.model.Formats
 import io.android.projectx.domain.features.books.model.Translator
 
-data class ResultView(
+@Entity(tableName = BooksConstants.TABLE_NAME)
+data class CachedBook(
+    @PrimaryKey
+    @ColumnInfo(name = BooksConstants.COLUMN_BOOK_ID)
     val id: Int,
     val authors: List<Author>,
     val bookshelves: List<String>,

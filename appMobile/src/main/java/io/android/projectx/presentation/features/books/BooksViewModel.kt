@@ -3,10 +3,9 @@ package io.android.projectx.presentation.features.books
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.scopes.ViewModelScoped
 import io.android.projectx.domain.features.books.interactor.GetBooks
 import io.android.projectx.presentation.base.mapper.BookViewMapper
-import io.android.projectx.presentation.base.model.ResultView
+import io.android.projectx.presentation.base.model.BookView
 import io.android.projectx.presentation.base.state.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -20,11 +19,11 @@ class BooksViewModel @Inject constructor(
     private val mapper: BookViewMapper
 ) : ViewModel() {
 
-    private val _stateFlow: MutableStateFlow<Resource<List<ResultView>?>>? = null
-    val stateFlow: MutableStateFlow<Resource<List<ResultView>?>>? = _stateFlow
+    private val _stateFlow: MutableStateFlow<Resource<List<BookView>?>>? = null
+    val stateFlow: MutableStateFlow<Resource<List<BookView>?>>? = _stateFlow
 
 
-    fun getBooks(): MutableStateFlow<Resource<List<ResultView>?>>? {
+    fun getBooks(): MutableStateFlow<Resource<List<BookView>?>>? {
         return _stateFlow
     }
 
@@ -46,8 +45,8 @@ class BooksViewModel @Inject constructor(
         }
     }
 
-    private fun updateState(newState: Resource<Flow<List<ResultView>>?>) {
-        _stateFlow!!.value = newState as Resource<List<ResultView>?>
+    private fun updateState(newState: Resource<Flow<List<BookView>>?>) {
+        _stateFlow!!.value = newState as Resource<List<BookView>?>
     }
 
 }

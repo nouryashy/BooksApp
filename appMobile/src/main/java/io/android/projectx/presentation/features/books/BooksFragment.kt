@@ -1,10 +1,7 @@
 package io.android.projectx.presentation.features.books
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Filter
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -15,11 +12,10 @@ import io.android.projectx.androidextensions.initVerticalRecycler
 import io.android.projectx.presentation.R
 import io.android.projectx.presentation.base.Adapter
 import io.android.projectx.presentation.base.BaseFragment
-import io.android.projectx.presentation.base.model.ResultView
+import io.android.projectx.presentation.base.model.BookView
 import io.android.projectx.presentation.base.state.Resource
 import io.android.projectx.presentation.extensions.updateVisibility
 import kotlinx.android.synthetic.main.book_item_list.view.*
-import kotlinx.android.synthetic.main.restaurants_adapter_item.view.*
 import kotlinx.android.synthetic.main.restaurants_fragment.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -27,7 +23,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class BooksFragment : BaseFragment(R.layout.bookmarked_fragment) {
 
-    private lateinit var adapter: Adapter<ResultView>
+    private lateinit var adapter: Adapter<BookView>
     private val viewModel: BooksViewModel by appViewModels()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -53,7 +49,7 @@ class BooksFragment : BaseFragment(R.layout.bookmarked_fragment) {
                     val sequence = constraint.toString()
                     if (sequence.isEmpty()) adapter.filteredList = adapter.items
                     else {
-                        val fList: MutableList<ResultView> = ArrayList()
+                        val fList: MutableList<BookView> = ArrayList()
                         for (name in adapter.items) {
                             if (name.title.toLowerCase().contains(sequence.toLowerCase()))
                                 fList.add(name)
@@ -66,7 +62,7 @@ class BooksFragment : BaseFragment(R.layout.bookmarked_fragment) {
                 }
 
                 override fun publishResults(constraint: CharSequence, results: FilterResults) {
-                    adapter.filteredList = results.values as MutableList<ResultView>
+                    adapter.filteredList = results.values as MutableList<BookView>
                     adapter.notifyDataSetChanged()
                 }
             }
@@ -75,11 +71,11 @@ class BooksFragment : BaseFragment(R.layout.bookmarked_fragment) {
     }
 
     private fun <T> onClick(item: T) {
-        val book = item as ResultView
+        val book = item as BookView
     }
 
     private fun <T> onBind(item: T, view: View) {
-        val book = item as ResultView
+        val book = item as BookView
         view.book_name_tv.text = book.title
         view.book_des_tv.text = book.media_type
         Glide.with(requireContext())
@@ -88,7 +84,7 @@ class BooksFragment : BaseFragment(R.layout.bookmarked_fragment) {
             .into(view.book_iv)
     }
 
-    private fun handleDataState(resource: Resource<List<ResultView>?>) {
+    private fun handleDataState(resource: Resource<List<BookView>?>) {
         progressbar.updateVisibility(resource.status)
         when (resource.status) {
             Resource.Status.SUCCESS -> resource.data?.let { adapter.items = it.toMutableList() }

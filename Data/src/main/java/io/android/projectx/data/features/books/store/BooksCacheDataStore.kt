@@ -3,7 +3,7 @@ package io.android.projectx.data.features.books.store
 import io.android.projectx.cache.AppDatabase
 import io.android.projectx.cache.features.books.mapper.CachedBookMapper
 import io.android.projectx.cache.features.config.model.Config
-import io.android.projectx.data.features.books.model.ResultEntity
+import io.android.projectx.data.features.books.model.BookEntity
 import io.android.projectx.data.features.books.repository.BooksCache
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
@@ -20,7 +20,7 @@ class BooksCacheDataStore @Inject constructor(
     }
 
 
-    override suspend fun getBooks(): Flow<List<ResultEntity>> {
+    override suspend fun getBooks(): Flow<List<BookEntity>> {
         return appDatabase.cachedBooksDao().getBooks().map {
             it.map { mapper.mapFromCached(it) }
         }
@@ -32,7 +32,7 @@ class BooksCacheDataStore @Inject constructor(
     }
 
 
-    override suspend fun saveBooks(books: Flow<List<ResultEntity>>) {
+    override suspend fun saveBooks(books: Flow<List<BookEntity>>) {
         return appDatabase.cachedBooksDao().insertBooks(books.map { mapper.mapToCached(it) })
     }
 

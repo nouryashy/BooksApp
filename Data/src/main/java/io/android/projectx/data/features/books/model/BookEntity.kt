@@ -4,7 +4,7 @@ import io.android.projectx.domain.features.books.model.Author
 import io.android.projectx.domain.features.books.model.Formats
 import io.android.projectx.domain.features.books.model.Translator
 
-data class ResultEntity(
+data class BookEntity(
     val id: Int,
     val authors: List<Author>,
     val bookshelves: List<String>,
